@@ -3,12 +3,10 @@ package service;
 import exceptions.NullObjectException;
 import payload.MonthlyReport;
 import payload.YearlyReport;
+import java.util.List;
 
-import java.awt.image.AreaAveragingScaleFilter;
-import java.util.ArrayList;
-
-public class ProfitProduct {
-    public MonthlyReport checkProfitProduct(ArrayList<MonthlyReport> monthlyReports) {
+public final class ProfitProduct {
+    public static  MonthlyReport checkProfitProduct(List<MonthlyReport> monthlyReports) {
         MonthlyReport mostProfitItem = null;
         int maxProfit = Integer.MIN_VALUE;
         for (MonthlyReport monthlyReport : monthlyReports) {
@@ -31,7 +29,7 @@ public class ProfitProduct {
         return mostProfitItem;
     }
 
-    public MonthlyReport checkSpendingProduct(ArrayList<MonthlyReport> monthlyReports) {
+    public static MonthlyReport checkSpendingProduct(List<MonthlyReport> monthlyReports) {
         MonthlyReport mostSpendingItem = null;
         int biggestWaste = Integer.MIN_VALUE;
         for (MonthlyReport monthlyReport : monthlyReports) {
@@ -55,7 +53,7 @@ public class ProfitProduct {
         return mostSpendingItem;
     }
 
-    public int averageProfitSum(ArrayList<YearlyReport> yearlyReports) {
+    public static int averageProfitSum(List<YearlyReport> yearlyReports) {
         for (YearlyReport yearlyReport : yearlyReports) {
             try {
                 if (yearlyReport == null) {
@@ -73,7 +71,7 @@ public class ProfitProduct {
         return YearlyReport.averageProfitSumCounter / yearlyReports.size();
     }
 
-    public int averageSpendingSum(ArrayList<YearlyReport> yearlyReports) {
+    public static int averageSpendingSum(List<YearlyReport> yearlyReports) {
 
         for (YearlyReport yearlyReport : yearlyReports) {
             try {

@@ -3,25 +3,18 @@ package service;
 import payload.MonthlyReport;
 import payload.YearlyReport;
 
-import java.util.ArrayList;
-
 public class Converter {
-    public MonthlyReport converterToMonthlyObj(String line) {
-        try {
-            String[] splitLines = new String[]{};
-            if (line.isEmpty()) {
-                System.out.println("В файле обнаружена пустая строка");
-            } else {
-                splitLines = line.split(",");
-            }
+    public static MonthlyReport converterToMonthlyObj(String line) throws Exception {
+        if (!line.isEmpty()) {
+            String[] splitLines = line.split(",");
             return new MonthlyReport(splitLines[0], Boolean.parseBoolean(splitLines[1]), Integer.parseInt(splitLines[2]), Integer.parseInt(splitLines[3]));
-        } catch (Exception e) {
-            System.out.println("Ошибка при считывании данных");
-            return null;
+
+        } else {
+            throw new Exception("В файле обнаружена пустая строка");
         }
     }
 
-    public YearlyReport converterToYearlyObj(String line) {
+    public static YearlyReport converterToYearlyObj(String line) {
         try {
             String[] splitLines = new String[]{};
             if (line.isEmpty()) {

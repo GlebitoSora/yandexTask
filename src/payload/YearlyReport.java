@@ -1,8 +1,13 @@
+package payload;
+
 public class YearlyReport {
-    private String month;
-    private int amount;
-    private boolean isExpense;
-    public YearlyReport(String month, int amount, boolean isExpense){
+    private final String month;
+    private final int amount;
+    private final boolean isExpense;
+    public static int averageProfitSumCounter;
+    public static int averageSpendingSumCounter;
+
+    public YearlyReport(String month, int amount, boolean isExpense) {
         this.month = month;
         this.amount = amount;
         this.isExpense = isExpense;
@@ -12,23 +17,31 @@ public class YearlyReport {
         return isExpense;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
     public String getMonth() {
         return month;
     }
 
-    public void setExpense(boolean expense) {
-        isExpense = expense;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void checkAverageProfitSum() {
+        if (this.isExpense) {
+            averageProfitSumCounter += this.amount;
+        }
     }
 
-    public void setMonth(String month) {
-        this.month = month;
+    public void checkAverageSpendingSum() {
+        if (!this.isExpense) {
+            averageSpendingSumCounter += this.amount;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "month='" + month + '\'' +
+                ", amount=" + amount +
+                ", isExpense=" + isExpense +
+                '}';
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileReader {
-    public List<String> readFileContents(String fileName) {
+    public static List<String> readFileContents(String fileName) {
         String path = "src/res/" + fileName;
         try {
             return Files.readAllLines(Path.of(path));

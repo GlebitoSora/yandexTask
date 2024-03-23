@@ -1,7 +1,5 @@
 package payload;
 
-import java.util.ArrayList;
-
 public class MonthlyReport {
     private final String itemName;
     private final int unitPrice;
@@ -40,4 +38,5 @@ public class MonthlyReport {
                 ", unitPrice=" + unitPrice +
                 '}';
     }
+
 }

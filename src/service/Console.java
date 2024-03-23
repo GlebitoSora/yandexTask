@@ -52,18 +52,14 @@ public class Console {
                     printMenu();
                 }
                 case 3 -> {
-                    System.out.println("Тут пока пусто");
-                    printMenu();
-                }
-                case 4 -> {
                     OutputObject.outputMonths(mapOfMonthlyReports);
                     printMenu();
                 }
-                case 5 -> {
+                case 4 -> {
                     OutputObject.outputYears(mapOfYearlyReports);
                     printMenu();
                 }
-                case 6 -> {
+                case 5 -> {
                     System.out.println("Выход...");
                     break POINT;
                 }
@@ -77,9 +73,8 @@ public class Console {
         System.out.println("Выберите действие:");
         System.out.println("1. Считать месячный отчет");
         System.out.println("2. Считывать годовой отчет");
-        System.out.println("3. Сверить отчеты");
-        System.out.println("4. Вывести информацию обо всех месячных отчетах ");
-        System.out.println("5. Вывести информацию о годовом отчете");
-        System.out.println("6. Выход");
+        System.out.println("3. Вывести информацию обо всех месячных отчетах ");
+        System.out.println("4. Вывести информацию о годовом отчете");
+        System.out.println("5. Выход");
     }
 }
